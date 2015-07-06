@@ -5,9 +5,17 @@
 </head>
 <body>
 <h1>Fireworks</h1>
-<script>
-    
-</script>
+<ul id="fireworks">
+</ul>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+$(document).ready(function() {
+        $.ajax({
+            url: 'https://fireworks.apihive.com/v1/fireworks'
+        }).done(function(data) {
+            console.log(data);
+        });
+});
+</script>
 </body>
 </html>
