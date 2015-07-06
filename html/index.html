@@ -13,7 +13,13 @@ $(document).ready(function() {
         $.ajax({
             url: 'https://fireworks.apihive.com/v1/fireworks'
         }).done(function(data) {
-            console.log(data);
+            data.forEach(function(event) {
+                $('#fireworks').append(
+                    '<li>' + 
+                        event.city + ', ' + event.state + ' -- ' +
+                        event.date + ' at ' + event.time +
+                    '</li>');
+            });
         });
 });
 </script>
